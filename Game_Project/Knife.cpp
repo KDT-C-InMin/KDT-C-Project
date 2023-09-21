@@ -8,7 +8,6 @@ using namespace std;
 Knife::Knife() {
 	this->attack_Damage = 5;
 	this->attack_Chance = 3;
-
 }
 
 void Knife::initAttackChance()
@@ -32,10 +31,10 @@ int Knife::check_AttackChance()
 
 void Knife::Attack() {
 	if (attack_Chance > 0) {
-		cout << "¾²À¹ ½Î¾Ç- µ¥¹ÌÁö " << attack_Damage << " ¸¦ ÀÔÇû½À´Ï´Ù." << endl;
+		cout << "¾²À¹ ½Î¾Ç- µ¥¹ÌÁö " << attack_Damage << " ¸¦ ÀÔÇû½À´Ï´Ù.";
 		this->attack_Chance = attack_Chance - 1;
 	}
 	else {
-		cout << "°ø°Ý È½¼ö°¡ ºÎÁ·ÇÏ´Ù." << endl;
+		cout << "°ø°Ý È½¼ö°¡ ºÎÁ·ÇÏ´Ù.";
 	}
 }

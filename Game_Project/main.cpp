@@ -32,18 +32,5 @@ int main() {
         continue;
     }
     system("cls");  // 콘솔창을 클린 하란 의미
-
-    /*
-
-            if (menuCode == GAME_STRAT) {
-
-    } else if (menuCode == GAME_INFO) {
-        infoGame();// 게임정보
-    } else if (menuCode == GAME_END) {
-        cout << "\n\n\n";
-        return 0; // 게임 종료
-    }
-
-    */
   }
 }

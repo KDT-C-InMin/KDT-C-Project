@@ -14,10 +14,10 @@ Gun::Gun() {
 
 void Gun::Attack() {
   if (attack_Chance > 0) {
-    cout << "빵야 빵야- 데미지 " << attack_Damage << " 를 입혔습니다." << endl;
+    cout << "빵야 빵야- 데미지 " << attack_Damage << " 를 입혔습니다." ;
     this->attack_Chance = attack_Chance - 1;
   } else {
-    cout << "공격 횟수가 부족하다." << endl;
+    cout << "공격 횟수가 부족하다.";
   }
 }
 

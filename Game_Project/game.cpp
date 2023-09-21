@@ -9,6 +9,7 @@
 
 #include "util.h"
 
+
 int keyControl() {
   char temp =
       _getch();  // 입력한 값이 콘솔창에 안나오고 바로 받아짐. 헤더추가 필수
