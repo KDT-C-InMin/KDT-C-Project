@@ -1,20 +1,12 @@
 #pragma once
 #include "main.h"
 
-#ifndef KEY_CODE
-#define KEY_CODE
+enum MENU { GAME_STRAT, GAME_INFO, GAME_END };
 
-// ★★★★ 키보드 값 정의 ★★★★ //
-#define UP 0
-#define DOWN 1
-#define LEFT 2
-#define RIGHT 3
-#define SUBMIT 4 // 선택하는 거
+enum KEY_CODE { UP, DOWN, LEFT, RIGHT, SUBMIT };
 
-#endif
-
-int MenuDraw();        // 게임시작 등등 버튼 생성 함수
-int keyControl();       // 키보드 입력 값 컨트롤 함수
-void infoGame();        //게임정보 출력
+int MenuDraw();    // 게임시작 등등 버튼 생성 함수
+int keyControl();  // 키보드 입력 값 컨트롤 함수
+void infoGame();   // 게임정보 출력
 void MainMenu();
 int Gaming_select();
