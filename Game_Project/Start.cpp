@@ -26,6 +26,8 @@
 
 using namespace std;
 
+int game_count;
+
 int game_Start() {
   Character character("커다시");
   // 게임 캐릭터 생성 관련한 부분이 따로 있으면 좋을듯 (유저생성아이디 + 아이디
@@ -35,6 +37,7 @@ int game_Start() {
 
   Gun* gun = new Gun();
   Knife* knife = new Knife();
+  game_count = 0;
 
   while (1) {
     system("cls");  // 콘솔창을 클린 하란 의미
@@ -51,16 +54,19 @@ int game_Start() {
          << "(●'ㅡ'●)캐릭터의 Level : " << character.get_level() << "입니다."
          << endl;
     cout << " ■";
-    character.get_weapon();
     cout << " ■";
     // 공격 횟수 나타내기
     if (character.get_weaponIndex() == 0) {  // 없음
-      cout << "\n";
+
+      if (game_count > 1) character.delete_Weapon();
+      cout << character.get_weaponIndex() << "\n";
     }
     if (character.get_weaponIndex() == 1) {  // 총
-      gun->get_AttackChance();
+      character.Player_GetWeapon(1);
+      gun->get_AttackChance() > 0;
     }
     if (character.get_weaponIndex() == 2) {  // 칼
+      character.Player_GetWeapon(2);
       knife->get_AttackChance();
     }
     cout << " ■-------------- 이걸 뭐라 했더라 --------------\n";
@@ -76,12 +82,14 @@ int game_Start() {
 
     switch (userSelect) {
       case GAME_SELECT::GET_KNIFE: {
+        game_count++;
         character.Player_GetWeapon(1);
         gun->initAttackChance();
         cout << "\n";
         break;
       }
       case GAME_SELECT::GET_WEAPON: {
+        game_count++;
         character.Player_GetWeapon(2);
         knife->initAttackChance();  // 공격횟수 초기화.
         cout << "\n";
@@ -93,6 +101,8 @@ int game_Start() {
             gun->Attack();
             enemy.set_hp(enemy.get_hp() - gun->get_AttackDamage());
           } else {
+            game_count--;
+            character.delete_Weapon();
             cout << "공격 횟수가 부족해서 공격에 실패했습니다," << endl;
           }
         } else if (character.get_weaponIndex() == 2) {  // 칼
@@ -100,6 +110,8 @@ int game_Start() {
             knife->Attack();
             enemy.set_hp(enemy.get_hp() - knife->get_AttackDamage());
           } else {
+            game_count--;
+            character.delete_Weapon();
             cout << "공격 횟수가 부족해서 공격에 실패했습니다," << endl;
           }
         } else {

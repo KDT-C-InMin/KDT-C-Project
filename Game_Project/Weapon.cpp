@@ -9,4 +9,7 @@ Weapon::Weapon() {
   this->attack_Damage = 0;
 }
 
-void Weapon::Attack() { cout << "무기로 공격합니다." << endl; }
+bool Weapon::Attack() {
+  cout << "무기로 공격합니다." << endl;
+  return true;
+}

@@ -17,7 +17,7 @@ class Weapon {
   Weapon();
   virtual ~Weapon() {}
 
-  virtual void Attack() = 0;
+  virtual bool Attack() = 0;
 };
 
 #endif

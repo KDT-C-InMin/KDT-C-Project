@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Game_Project",
+    "\\Game_Project\\x64"
   ],
-  "SelectedNode": "\\C:\\Users\\INAH PAK\\Source\\Repos\\KDT-C-Project",
+  "SelectedNode": "\\Game_Project\\Knife.h",
   "PreviewInSolutionExplorer": false
 }

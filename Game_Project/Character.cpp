@@ -15,6 +15,8 @@ Character::Character(string name) {
 
 void Character::Player_Attack() { cout << "플레이어가 공격을 합니다." << endl; }
 
+void Character::delete_Weapon() { this->weapons.pop_back(); }
+
 void Character::Player_GetWeapon(
     int WeaponIndex) {  // 플레이어가 무기를 획득하는 과정.
 
